@@ -8,6 +8,7 @@ import FooterBrainrotEs from "../spanish/FooterBrainrotEs.astro"
 const { brainrot } = Astro.props
 
 const isSpainLanguage = await getHeaders({ request: Astro.request })
+console.log(isSpainLanguage)
 ---
 
-{!isSpainLanguage ? <FooterBrainrot brainrot={brainrot} /> : <FooterBrainrotEs brainrot={brainrot}/>}
+{isSpainLanguage ? <FooterBrainrotEs brainrot={brainrot} /> : <FooterBrainrot brainrot={brainrot}/>}
