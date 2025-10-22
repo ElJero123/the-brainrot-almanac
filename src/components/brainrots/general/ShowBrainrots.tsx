@@ -67,7 +67,7 @@ export function ShowBrainrots({ brainrots }: { brainrots: Brainrot[] }) {
                     return (
                         <div key={brainrotData.digest} className="flex flex-col items-center justify-center gap-2 border-1 border-[var(--fourty)] p-5 rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.08)]
                                 hover:shadow-[0_6px_18px_rgba(0,0,0,0.12)] transition-all duration-300">
-                            <img src={brainrot.image} alt={brainrot.name} className="sm:w-35 w-48 md:w-48 rounded-2xl sm:h-35 md:h-48 h-48" />
+                            <img src={brainrot.image} alt={brainrot.name} className="sm:w-35 w-48 md:w-48 rounded-2xl sm:h-35 md:h-48" />
                             <h2 className="font-semibold max-w-full text-normal sm:text-sm md:text-normal">{brainrot.name}</h2>
                             <a href={`/brainrots/${brainrotData.slug}`} className="bg-[var(--fourty)] mt-3 px-4 py-2 
                             rounded-2xl font-semibold text-[var(--secondary)] text-sm">
