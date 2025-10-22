@@ -1,0 +1,31 @@
+---
+import { getCollection } from "astro:content"
+import Layout from "../../layouts/Layout.astro"
+import Header from "../../components/brainrots/general/Header.astro"
+import BrainrotTranslated from "../../components/brainrots/general/BrainrotTranslated.astro"
+import FooterTranslated from "../../components/brainrots/general/FooterTranslated.astro"
+
+export const getStaticPaths = async () => {
+    const brainrots = await getCollection("brainrots")
+
+    return brainrots.map((brainrot) => ({
+        params: { name: brainrot.slug },
+        props: { brainrot },
+    }))
+}
+
+export const prerender = true
+
+const { brainrot } = Astro.props;
+const dataBrainrot = brainrot.data
+---
+
+<Layout title={`Brainrot - ${dataBrainrot.name}`}>
+    <div class="flex flex-col min-h-screen">
+        <Header />
+        <div class="flex-1">
+            <BrainrotTranslated brainrot={brainrot} server:defer/> 
+        </div>
+        <FooterTranslated />
+    </div>
+</Layout>

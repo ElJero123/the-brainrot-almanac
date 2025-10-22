@@ -1,0 +1,36 @@
+---
+import Animation from "../Animation.astro"
+---
+
+<header class="min-h-[65vh] w-full bg-[url(/bg-hero.png)]
+    relative bg-cover bg-center flex flex-wrap
+    font-dm shadow-[0_20px_60px_rgba(126,87,137,0.6)]">
+    <!-- <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div> -->
+
+    <section class="flex-1 flex flex-col justify-between">
+        <aside class="p-5">
+            <img src="/logo.svg" alt="almanac logo" class="w-15 h-15"/>
+        </aside>
+        <aside class="mb-15 ml-3">
+            <h1 class="text-[var(--fourty)] text-6xl font-semibold">The Brainrot Almanac</h1>
+            <h3 class="text-[var(--fourty)] text-3xl mt-2 w-3/4">
+                Here you will see all the brainrots (or well, most of them) that are on the Internet. 
+                The most popular ones have their information shown here.
+            </h3>
+            <div class="mt-10">
+                <a href="/brainrots" class="bg-[var(--fourty)] mt-3 px-10 py-3 
+                rounded-full font-semibold text-[var(--secondary)] text-lg">
+                    Got there
+                </a>
+            </div>
+        </aside>
+    </section>
+    
+    <section>
+        <div class="flex justify-start items-center h-full p-5">
+            <Animation />
+        </div>    
+       
+        <!--Animation -->
+    </section>
+</header> 

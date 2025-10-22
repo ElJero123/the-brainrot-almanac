@@ -1,11 +1,28 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import AboutAndMission from '../components/landing/english/AboutAndMission.astro'
+import Footer from '../components/landing/english/Footer.astro'
+import Hero from '../components/landing/english/Hero.astro'
+import AboutAndMissionEs from '../components/landing/spanish/AboutAndMissionEs.astro'
+import FooterEs from '../components/landing/spanish/FooterEs.astro'
+import HeroEs from '../components/landing/spanish/HeroEs.astro'
+import { getHeaders } from '../functions/getHeaders'
+import Layout from '../layouts/Layout.astro'
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+export const prerender = false
+
+const isSpainLanguage = await getHeaders({ request: Astro.request })
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="The Brainrot's Almanac">
+	<div class="min-h-screen justify-between w-full bg-[var(--primary)] flex flex-col">
+		{!isSpainLanguage ?
+			<Hero />
+			<AboutAndMission />
+			<Footer />
+		:
+			<HeroEs />
+			<AboutAndMissionEs />
+			<FooterEs />	
+		}
+	</div>
 </Layout>

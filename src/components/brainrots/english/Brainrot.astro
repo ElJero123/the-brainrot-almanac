@@ -1,0 +1,46 @@
+---
+import type { Brainrot } from "../../../types"
+
+const { brainrot } = Astro.props
+const dataBrainrot: Brainrot = brainrot
+
+const { data } = dataBrainrot
+
+const brainrotConditionals = dataBrainrot.slug === 'pipi-avocado'
+---
+
+<section class="prose prose-invert max-w-none mt-5 flex-1">
+    <div class="max-w-9/10 flex flex-col items-center mx-auto">
+        <article class="px-3 flex gap-5 flex-col md:flex-row items-center md:items-start w-full">
+            <img src={data.video} alt={`${data.name} gif`} class=`animate-zoom-in ${brainrotConditionals && 'max-h-150 object-cover'} rounded-lg shadow-lg w-1/2 md:max-h-150 md:w-120` />
+            <div class="border-b-1 border-[var(--secondary)] pb-4 md:border-0 md:pb-0">
+                <h1 class="text-3xl font-bold text-[var(--secondary)]">{data.name}</h1>
+                <h2 class="text-2xl font-semibold mt-2 text-[var(--secondary)]">History</h2>
+                <p>{data.history?.english}</p>
+            </div>
+        </article>
+        <article class="flex gap-5 flex-col mt-4 px-3 justify-center w-full">
+            <div class="border-b-1 border-[var(--secondary)] pb-4">
+                <h2 class="text-2xl font-semibold mt-2 text-[var(--secondary)]">Lyrics</h2>
+
+                <h3 class="text-xl font-semibold mt-2 text-[var(--secondary)]">Italian version</h3>
+                <p>{data.lyrics?.italian}</p>
+
+                <h3 class="text-xl font-semibold mt-2 text-[var(--secondary)]">English version</h3>
+                <p>{data.lyrics?.english}</p>
+            </div>
+            <div class="border-b-1 border-[var(--secondary)] pb-4">
+                <h2 class="text-2xl font-semibold mt-2 text-[var(--secondary)]">Description or Personality</h2>
+                <p>{data.personality?.english}</p>
+            </div>
+            <div class="border-b-1 border-[var(--secondary)] pb-4">
+                <h2 class="text-2xl font-semibold mt-2 text-[var(--secondary)]">Reception</h2>
+                <p>{data.reception?.english}</p>
+            </div>
+            <div>
+                <h2 class="text-2xl font-semibold mt-2 text-[var(--secondary)]">In battle</h2>
+                <p>{data.inBattle?.english}</p>
+            </div>
+        </article>
+    </div>
+</section>

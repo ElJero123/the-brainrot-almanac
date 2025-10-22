@@ -1,0 +1,126 @@
+---
+import { Prism } from '@astrojs/prism'
+
+const outputExample = `
+[
+  {
+    "id": 34,
+    "key": "19",
+    "slug": "trulimero-trulichina",
+    "name": "Trulimero Trulichina",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaBDNXErf-wPmjYQwq0cG9OvkiXMmK1q5fSg&s",
+    "video": "https://kblrqzpdharaxwokgwqm.supabase.co/storage/v1/object/public/Brainrots/Download.gif",
+    "lyrics_italian": "Trulimero Trulichina, il pretiletine in piscina, formaggio sulla trulalima, ma chi chiama la tazzina?\r\n",
+    "lyrics_english": "Trulimero Trulichina, the pretiletine in the pool, cheese on the trulalima, but who calls the cup?\r\n",
+    "lyrics_spanish": "Trulimero Trulichina, el pretiletino en la piscina, queso en la trulalima, pero ¿quien llama a la copa?\r\n",
+    "personality_english": "Trulimero Trulicina is a cat-fish hybrid with human legs.\r\n",
+    "personality_spanish": "Trulimero Trulichina es un hibrido de gato y pez con patas humanas.\r\n",
+    "history_english": "On January 20, 2025, the user @Espeldo (also just called Ok) on TikTok made the Trulimero Truliccina audio with an AI generated image of a dolphin with a human face and snail on its head. Video which is now deleted. Just like Tralalero Tralala, it had many remixes who used the audio with AI images and weird cat and dog positions, that showed an image of these animals body language and in the other image there was a weird dog or cat image. Then on January 28th, 2025, TikToker @zanahoriatan33 posted the earliest known cat-fish hybrid video set to the \"Trulimero Trulichina\" sound effect, gathering over 7 million plays and 800,000 likes in three months\r\n",
+    "history_spanish": "El 20 de enero de 2025, el usuario @Espeldo (tambien conocido simplemente como Ok) en TikTok creo el audio de Trulimero Truliccina acompanado de una imagen generada por IA de un delfin con cara humana y un caracol en la cabeza. Dicho video fue posteriormente eliminado. Al igual que con Tralalero Tralala, aparecieron muchos remixes que usaban el audio junto con imagenes de IA y posiciones extranas de gatos y perros, mostrando en una parte imagenes del lenguaje corporal de estos animales y en la otra imagenes distorsionadas de perros o gatos. Luego, el 28 de enero de 2025, la tiktoker @zanahoriatan33 publico el primer video conocido de un hibrido gato-pez con el efecto de sonido \"Trulimero Trulichina\", logrando mas de 7 millones de reproducciones y 800,000 me gusta en tres meses.\r\n",
+    "reception_english": "On February 8th, 2025, the AI-generated cat-fish hybrid appeared in a video posted by TikToker @_goon_master_, who gathered over 8 million views and 700,000 likes on a video set to the \"Trulimero Trulichina\" sound effect in two months\r\n",
+    "reception_spanish": "El 8 de febrero de 2025, el hibrido gato-pez generado por IA aparecio en un video publicado por el tiktoker @_goon_master_, quien consiguio mas de 8 millones de visualizaciones y 700,000 me gusta en un lapso de dos meses usando el efecto de sonido \"Trulimero Trulichina\".\r\n",
+    "inbattle_english": "Trulimero Trulichina, as expected due to its not exactly fearsome characteristics, is often cited as one of the weakest fighters near the sea, often losing interactions with Tralalero Tralala.\r\n",
+    "inbattle_spanish": "Trulimero Trulichina, como era de esperarse por sus caracteristicas poco intimidantes, suele ser mencionado como uno de los combatientes mas debiles cerca del mar, perdiendo con frecuencia enfrentamientos contra Tralalero Tralala.\r\n"
+  }
+]`
+---
+
+<section class="max-w-5xl mx-auto px-6 py-12 text-[var(--secondary)]">
+  <header class="mb-12">
+    <h1 class="text-3xl font-bold text-secondary">API - Brainrots (GET Usage)</h1>
+    <p class="mt-2 text-[var(--thirty)]">
+      This API exposes "brainrot" resources using only GET
+    </p>
+  </header>
+
+  <!-- Overview -->
+  <div class="bg-[var(--fourty)]/30 backdrop-blur-md border border-[var(--fourty)] rounded-2xl p-6 mb-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_6px_30px_rgba(0,0,0,0.12)]">
+    <h2 class="text-2xl font-semibold text-secondary">Overview</h2>
+    <p class="text-[var(--thirty)] mt-2">Users can:</p>
+    <ul class="list-disc list-inside text-[var(--secondary)] mt-3 space-y-1">
+      <li>Retrieve <span class="font-medium">all information</span> in the full list.</li>
+      <li>Filter <span class="font-medium">specific objects</span> using <em>query params</em>.</li>
+    </ul>
+    <p class="backdrop-blur-md bg-gradient-to-bl from-[var(--thirty)]/40 to-[var(--thirty)]/20 px-2 py-4 my-3 rounded-md overflow-x-auto text-[var(--secondary)]">
+      Note: Some fields such as <code>lyrics</code>, <code>history</code> or <code>personality</code> contain long text.
+    </p>
+  </div>
+
+  <!-- Base endpoint -->
+  <div class="bg-[var(--fourty)]/30 backdrop-blur-md border border-[var(--fourty)] rounded-2xl p-6 mb-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_6px_30px_rgba(0,0,0,0.12)]">
+    <h2 class="text-2xl font-semibold text-secondary">Base Endpoint</h2>
+    <Prism lang='http' code=`GET https://your-domain.com/api/brainrots` class='backdrop-blur-md bg-gradient-to-bl from-[var(--thirty)]/40 to-[var(--thirty)]/20 px-2 py-4 my-3 rounded-md overflow-x-auto text-[var(--secondary)]'/>
+  </div>
+
+  <!-- Query Params -->
+  <div class="bg-[var(--fourty)]/30 backdrop-blur-md border border-[var(--fourty)] rounded-2xl p-6 mb-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_6px_30px_rgba(0,0,0,0.12)]">
+    <h2 class="text-2xl font-semibold text-secondary">Using GET with Query Params</h2>
+    <p class="text-[var(--thirty)] mt-2">You can filter results with parameters in the URL:</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+      <div class="p-4 backdrop-blur-md bg-gradient-to-bl from-[var(--thirty)]/40 to-[var(--thirty)]/20 px-2 py-4 my-3 rounded-md overflow-x-auto text-[var(--secondary)] bg-transparent">
+        <h3 class="text-lg font-semibold text-fourty">name</h3>
+        <p class="text-[var(--thirty)] mt-1">Refers to the object's <strong>slug</strong>.</p>
+        <Prism lang='http' code='GET /api/brainrots?name=bambini-crostini' class='mt-6 overflow-x-autotext-[var(--secondary)]'/>
+      </div>
+
+      <div class="p-4 backdrop-blur-md bg-gradient-to-bl from-[var(--thirty)]/40 to-[var(--thirty)]/20 px-2 py-4 my-3 rounded-md overflow-x-auto text-[var(--secondary)]">
+        <h3 class="text-lg font-semibold text-fourty">key</h3>
+        <p class="text-[var(--thirty)] mt-1">Refers to the <code>data.key</code> property.</p>
+        <Prism lang='http' code='GET /api/brainrots?key=20' class='mt-6 text-[var(--secondary)]'/>
+      </div>
+    </div>
+
+    <div class="mt-6">
+      <h3 class="text-lg font-semibold text-fourty">Combining filters</h3>
+      <Prism lang='http' code='GET /api/brainrots?name=fluri-frulla&key=4' class='backdrop-blur-md bg-gradient-to-bl from-[var(--thirty)]/40 to-[var(--thirty)]/20 px-2 py-4 my-3 rounded-md overflow-x-auto text-[var(--secondary)]'/>
+    </div>
+  </div>
+
+  <!-- Examples -->
+  <div class="bg-[var(--fourty)]/30 backdrop-blur-md border border-[var(--fourty)] rounded-2xl p-6 mb-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_6px_30px_rgba(0,0,0,0.12)]">
+    <h2 class="text-2xl font-semibold text-secondary">Examples</h2>
+
+    <h3 class="mt-4 font-medium text-fourty">1. Get all (summary list)</h3>
+    <Prism lang='http' code='GET https://your-domain.com/api/brainrots' class='backdrop-blur-md bg-gradient-to-bl from-[var(--thirty)]/40 to-[var(--thirty)]/20 px-2 py-4 my-3 rounded-md overflow-x-auto text-[var(--secondary)]'/>
+    
+
+    <h3 class="mt-4 font-medium text-fourty">2. Get an object by slug</h3>
+    <Prism lang='http' code='GET https://your-domain.com/api/brainrots/bambini-crostini' class='backdrop-blur-md bg-gradient-to-bl from-[var(--thirty)]/40 to-[var(--thirty)]/20 px-2 py-4 my-3 rounded-md overflow-x-auto text-[var(--secondary)]'/>
+
+    <h3 class="mt-4 font-medium text-fourty">3. Search with query params (fetch)</h3>
+    <Prism lang='js' code={`
+      // By slug
+        fetch('https://your-domain.com/api/brainrots?name=bambini-crostini')
+          .then(r => r.json())
+          .then(data => console.log(data));
+
+      // By key
+        fetch('https://your-domain.com/api/brainrots?key=20')
+          .then(r => r.json())
+          .then(data => console.log(data));`
+      } class="backdrop-blur-md bg-gradient-to-bl from-[var(--thirty)]/40 to-[var(--thirty)]/20 px-2 py-4 my-3 rounded-md overflow-x-auto text-[var(--secondary)]"/>
+  </div>
+
+  <div class="bg-[var(--fourty)]/30 backdrop-blur-md border border-[var(--fourty)] rounded-2xl p-6 mb-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_6px_30px_rgba(0,0,0,0.12)]">
+    <h2 class="text-2xl font-semibold">Output</h2>
+
+    <h3 class="mt-4 font-medium text-fourty">1. Fetch</h3>
+    <Prism lang='http' code='GET https://your-domain.com/api/brainrots?name=trulimero-trulichina' class='backdrop-blur-md bg-gradient-to-bl from-[var(--thirty)]/40 to-[var(--thirty)]/20 px-2 py-4 my-3 rounded-md overflow-x-auto text-[var(--secondary)]'/>
+
+    <h3 class="mt-4 font-medium text-fourty">2. Response</h3>
+    <Prism lang='js' code={outputExample} class='backdrop-blur-md bg-gradient-to-bl from-[var(--thirty)]/40 to-[var(--thirty)]/20 px-2 py-4 my-3 rounded-md overflow-x-auto text-[var(--secondary)]'/>
+
+  </div>
+
+
+  <!-- Errors -->
+  <div class="bg-[var(--fourty)]/30 backdrop-blur-md border border-[var(--fourty)] rounded-2xl p-6 mb-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_6px_30px_rgba(0,0,0,0.12)]">
+    <h2 class="text-2xl font-semibold text-secondary">Errors and Behavior</h2>
+    <ul class="list-disc list-inside text-[var(--secondary)] mt-3 space-y-2">
+      <li>If no results are found, returns <code>[]</code>.</li>
+      <li>If the <code>slug</code> does not exist, returns <code>404 Not Found</code> with an explanatory JSON.</li>
+      <li>Only <code>GET</code> methods are accepted. Others return <code>405 Method Not Allowed</code>.</li>
+    </ul>
+  </div>
+</section>

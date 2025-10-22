@@ -1,0 +1,14 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/brainrots/general/Header.astro";
+import { ShowBrainrots } from "../components/brainrots/general/ShowBrainrots";
+import { getCollection } from "astro:content";
+import { type Brainrot } from "../types";
+
+const brainrots = (await getCollection("brainrots")) as unknown as Brainrot[];
+---
+
+<Layout title="Brainrots">
+  <Header />
+  <ShowBrainrots brainrots={brainrots} client:load />
+</Layout>

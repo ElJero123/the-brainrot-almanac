@@ -1,46 +1,64 @@
-# Astro Starter Kit: Basics
+# 🧠 The Brainrot Almanac
 
-```sh
-npm create astro@latest -- --template basics
-```
+**The Brainrot Almanac** es un sitio web que recopila, organiza y documenta los *brainrots* más icónicos, absurdos y virales de la cultura de Internet moderna.  
+Inspirado por la estética “weirdcore” y el humor caótico que domina las redes, este almanaque sirve como un archivo digital de los personajes, memes y fenómenos más extraños del ciberespacio.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-## 🚀 Project Structure
+## 🌍 Web Page
+👉 [Visita el sitio](https://the-brainrots-almanac.com)
 
-Inside of your Astro project, you'll see the following folders and files:
+---
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+## 🖼️ Vista general
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+### Página principal
+Una galería visual de *brainrots* con nombres y miniaturas únicas, cada una con un botón **“View more”** para explorar su historia, origen y personalidad.
 
-## 🧞 Commands
+![Brainrots Gallery](https://the-brainrots-almanac.com/brainrots)
 
-All commands are run from the root of the project, from a terminal:
+### API pública
+El proyecto incluye una API REST que expone los datos de los *brainrots* para su uso libre o educativo.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+![API Docs](https://the-brainrots-almanac.com/docs-api)
 
-## 👀 Want to learn more?
+---
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## ⚙️ Características
+
+- 📚 **Almanaque Vasto:** lista de *brainrots* con su nombre, descripción, historia y curiosidades.  
+- 🔎 **Búsqueda y filtrado dinámico:** encuentra *brainrots* por nombre o clave interna.  
+- 🧩 **API pública (solo GET):** accede a los datos en formato JSON.  
+- 💜 **Diseño moderno y estético:** interfaz en tonos lilas inspirada en la estética “brainrot-core”.  
+- ☁️ **Despliegue listo para producción:** compatible con Vercel, Netlify o cualquier servicio Node.js.
+
+---
+
+## 🚀 Tecnologías utilizadas
+
+- **Frontend:** Astro + TypeScript 
+- **Estilos:** Tailwind CSS  
+- **Servidor / API:** Astro backend (endpoints)  
+- **Hosting recomendado:** Vercel / Render  
+
+---
+
+## ❤️ Créditos 
+
+- Creado con amor y humor digital por Jero Aguirre.
+Inspirado en la cultura del brainrot italiano, memes y rarezas de Internet.
+
+
+## Donaciones 🙏🏻💵
+
+- Si te gusta el proyecto, puedes apoyar con una pequeña donación:
+https://mpago.li/2zZrF69
+
+
+### Base Endpoint
+```bash
+GET https://the-brainrots-almanac.com/api/brainrots
+
+```params
+GET https://the-brainrots-almanac.com/api/brainrots?name=67&key=112
+

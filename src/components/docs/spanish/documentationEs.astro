@@ -1,0 +1,91 @@
+---
+import { Prism } from '@astrojs/prism'
+---
+
+<section class="max-w-5xl mx-auto px-6 py-12 text-primary">
+  <header class="mb-12">
+    <h1 class="text-3xl font-bold text-secondary">API - Brainrots (Uso con GET)</h1>
+    <p class="mt-2 text-[var(--thirty)]">
+      Esta API expone recursos "brainrot" utilizando únicamente solicitudes GET.
+    </p>
+  </header>
+
+  <!-- Overview -->
+  <div class="bg-[var(--fourty)] border border-fourty rounded-xl shadow-lg p-6 mb-8">
+    <h2 class="text-2xl font-semibold text-secondary">Descripción general</h2>
+    <p class="text-[var(--thirty)] mt-2">Los usuarios pueden:</p>
+    <ul class="list-disc list-inside text-primary mt-3 space-y-1">
+      <li>Obtener <span class="font-medium">toda la información</span> en la lista completa.</li>
+      <li>Filtrar <span class="font-medium">objetos específicos</span> usando <em>parámetros de consulta</em>.</li>
+    </ul>
+    <p class="mt-4 bg-[var(--thirty)] p-3 rounded-lg text-fourty text-sm">
+      Nota: Algunos campos como <code>lyrics</code>, <code>history</code> o <code>personality</code> contienen texto extenso.
+    </p>
+  </div>
+
+  <!-- Base endpoint -->
+  <div class="bg-[var(--fourty)] border border-fourty rounded-xl shadow-lg p-6 mb-8">
+    <h2 class="text-2xl font-semibold text-secondary">Punto de conexión base</h2>
+    <Prism lang='http' code={`GET https://your-domain.com/api/brainrots`} class='bg-[var(--thirty)] px-2 py-4 my-3 rounded-md'/>
+  </div>
+
+  <!-- Query Params -->
+  <div class="bg-[var(--fourty)] border border-fourty rounded-xl shadow-lg p-6 mb-8">
+    <h2 class="text-2xl font-semibold text-secondary">Uso de GET con parámetros de consulta</h2>
+    <p class="text-[var(--thirty)] mt-2">Puedes filtrar los resultados usando parámetros en la URL:</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+      <div class="bg-[var(--thirty)] p-4 rounded-lg">
+        <h3 class="text-lg font-semibold text-fourty">name</h3>
+        <p class="text-[var(--thirty)] mt-1">Se refiere al <strong>slug</strong> del objeto.</p>
+        <Prism lang='http' code='GET /api/brainrots?name=bambini-crostini' class='mt-6 '/>
+      </div>
+
+      <div class="bg-[var(--thirty)] p-4 rounded-lg">
+        <h3 class="text-lg font-semibold text-fourty">key</h3>
+        <p class="text-[var(--thirty)] mt-1">Se refiere a la propiedad <code>data.key</code>.</p>
+        <Prism lang='http' code='GET /api/brainrots?key=20' class='mt-6'/>
+      </div>
+    </div>
+
+    <div class="mt-6">
+      <h3 class="text-lg font-semibold text-fourty">Combinando filtros</h3>
+      <Prism lang='http' code='GET /api/brainrots?name=fluri-frulla&key=4' class='mt-3 bg-[var(--thirty)] px-2 py-4 my-3 rounded-md'/>
+    </div>
+  </div>
+
+  <!-- Examples -->
+  <div class="bg-[var(--fourty)] border border-fourty rounded-xl shadow-lg p-6 mb-8">
+    <h2 class="text-2xl font-semibold text-secondary">Ejemplos</h2>
+
+    <h3 class="mt-4 font-medium text-fourty">1. Obtener todos (lista resumida)</h3>
+    <Prism lang='http' code='GET https://your-domain.com/api/brainrots' class='mt-3 bg-[var(--thirty)] px-2 py-4 my-3 rounded-md'/>
+    
+
+    <h3 class="mt-4 font-medium text-fourty">2. Obtener un objeto por slug</h3>
+    <Prism lang='http' code='GET https://your-domain.com/api/brainrots/bambini-crostini' class='mt-3 bg-[var(--thirty)] px-2 py-4 my-3 rounded-md'/>
+
+    <h3 class="mt-4 font-medium text-fourty">3. Buscar con parámetros de consulta (fetch)</h3>
+    <Prism lang='js' code={`
+      // Por slug
+        fetch('https://your-domain.com/api/brainrots?name=bambini-crostini')
+          .then(r => r.json())
+          .then(data => console.log(data));
+
+      // Por key
+        fetch('https://your-domain.com/api/brainrots?key=20')
+          .then(r => r.json())
+          .then(data => console.log(data));`
+      } class="bg-[var(--thirty)] px-2 pt-4 pb-10 my-3 rounded-md"/>
+  </div>
+
+  <!-- Errors -->
+  <div class="bg-[var(--fourty)] border border-fourty rounded-xl shadow-lg p-6">
+    <h2 class="text-2xl font-semibold text-secondary">Errores y comportamiento</h2>
+    <ul class="list-disc list-inside text-primary mt-3 space-y-2">
+      <li>Si no se encuentran resultados, devuelve <code>[]</code>.</li>
+      <li>Si el <code>slug</code> no existe, devuelve <code>404 Not Found</code> con un JSON explicativo.</li>
+      <li>Solo se aceptan métodos <code>GET</code>. Los demás devuelven <code>405 Method Not Allowed</code>.</li>
+    </ul>
+  </div>
+</section>

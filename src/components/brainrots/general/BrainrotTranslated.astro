@@ -1,0 +1,13 @@
+---
+export const prerender = false 
+
+import Brainrot from "../../../components/brainrots/english/Brainrot.astro"
+import BrainrotEs from "../../../components/brainrots/spanish/BrainrotEs.astro"
+import { getHeaders } from "../../../functions/getHeaders"
+
+const { brainrot } = Astro.props
+
+const isSpainLanguage = await getHeaders({ request: Astro.request })
+---
+
+{!isSpainLanguage ? <Brainrot brainrot={brainrot} /> : <BrainrotEs brainrot={brainrot}/>}

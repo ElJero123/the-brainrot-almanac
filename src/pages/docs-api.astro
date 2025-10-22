@@ -1,0 +1,14 @@
+---
+import Header from "../components/brainrots/general/Header.astro";
+import Documentation from "../components/docs/english/documentation.astro";
+import DocumentationEs from "../components/docs/spanish/documentationEs.astro";
+import { getHeaders } from "../functions/getHeaders";
+import Layout from "../layouts/Layout.astro";
+
+const isSpainLanguage = await getHeaders({ request: Astro.request })
+---
+
+<Layout title="Brainrot - API Docs">
+    <Header />
+    {!isSpainLanguage ? <Documentation />: <DocumentationEs />}
+</Layout>
