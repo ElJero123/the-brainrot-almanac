@@ -49,7 +49,7 @@ const outputExample = `
   <!-- Base endpoint -->
   <div class="bg-[var(--fourty)]/30 backdrop-blur-md border border-[var(--fourty)] rounded-2xl p-6 mb-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_6px_30px_rgba(0,0,0,0.12)]">
     <h2 class="text-2xl font-semibold text-secondary">Base Endpoint</h2>
-    <Prism lang='http' code=`GET https://your-domain.com/api/brainrots` class='backdrop-blur-md bg-gradient-to-bl from-[var(--thirty)]/40 to-[var(--thirty)]/20 px-2 py-4 my-3 rounded-md overflow-x-auto text-[var(--secondary)]'/>
+    <Prism lang='http' code=`GET https://the-brainrots-almanac/api/brainrots` class='backdrop-blur-md bg-gradient-to-bl from-[var(--thirty)]/40 to-[var(--thirty)]/20 px-2 py-4 my-3 rounded-md overflow-x-auto text-[var(--secondary)]'/>
   </div>
 
   <!-- Query Params -->
@@ -82,21 +82,21 @@ const outputExample = `
     <h2 class="text-2xl font-semibold text-secondary">Examples</h2>
 
     <h3 class="mt-4 font-medium text-fourty">1. Get all (summary list)</h3>
-    <Prism lang='http' code='GET https://your-domain.com/api/brainrots' class='backdrop-blur-md bg-gradient-to-bl from-[var(--thirty)]/40 to-[var(--thirty)]/20 px-2 py-4 my-3 rounded-md overflow-x-auto text-[var(--secondary)]'/>
+    <Prism lang='http' code='GET https://the-brainrots-almanac/api/brainrots' class='backdrop-blur-md bg-gradient-to-bl from-[var(--thirty)]/40 to-[var(--thirty)]/20 px-2 py-4 my-3 rounded-md overflow-x-auto text-[var(--secondary)]'/>
     
 
     <h3 class="mt-4 font-medium text-fourty">2. Get an object by slug</h3>
-    <Prism lang='http' code='GET https://your-domain.com/api/brainrots/bambini-crostini' class='backdrop-blur-md bg-gradient-to-bl from-[var(--thirty)]/40 to-[var(--thirty)]/20 px-2 py-4 my-3 rounded-md overflow-x-auto text-[var(--secondary)]'/>
+    <Prism lang='http' code='GET https://the-brainrots-almanac/api/brainrots/bambini-crostini' class='backdrop-blur-md bg-gradient-to-bl from-[var(--thirty)]/40 to-[var(--thirty)]/20 px-2 py-4 my-3 rounded-md overflow-x-auto text-[var(--secondary)]'/>
 
     <h3 class="mt-4 font-medium text-fourty">3. Search with query params (fetch)</h3>
     <Prism lang='js' code={`
       // By slug
-        fetch('https://your-domain.com/api/brainrots?name=bambini-crostini')
+        fetch('https://the-brainrots-almanac/api/brainrots?name=bambini-crostini')
           .then(r => r.json())
           .then(data => console.log(data));
 
       // By key
-        fetch('https://your-domain.com/api/brainrots?key=20')
+        fetch('https://the-brainrots-almanac/api/brainrots?key=20')
           .then(r => r.json())
           .then(data => console.log(data));`
       } class="backdrop-blur-md bg-gradient-to-bl from-[var(--thirty)]/40 to-[var(--thirty)]/20 px-2 py-4 my-3 rounded-md overflow-x-auto text-[var(--secondary)]"/>
@@ -106,7 +106,7 @@ const outputExample = `
     <h2 class="text-2xl font-semibold">Output</h2>
 
     <h3 class="mt-4 font-medium text-fourty">1. Fetch</h3>
-    <Prism lang='http' code='GET https://your-domain.com/api/brainrots?name=trulimero-trulichina' class='backdrop-blur-md bg-gradient-to-bl from-[var(--thirty)]/40 to-[var(--thirty)]/20 px-2 py-4 my-3 rounded-md overflow-x-auto text-[var(--secondary)]'/>
+    <Prism lang='http' code='GET https://the-brainrots-almanac/api/brainrots?name=trulimero-trulichina' class='backdrop-blur-md bg-gradient-to-bl from-[var(--thirty)]/40 to-[var(--thirty)]/20 px-2 py-4 my-3 rounded-md overflow-x-auto text-[var(--secondary)]'/>
 
     <h3 class="mt-4 font-medium text-fourty">2. Response</h3>
     <Prism lang='js' code={outputExample} class='backdrop-blur-md bg-gradient-to-bl from-[var(--thirty)]/40 to-[var(--thirty)]/20 px-2 py-4 my-3 rounded-md overflow-x-auto text-[var(--secondary)]'/>
