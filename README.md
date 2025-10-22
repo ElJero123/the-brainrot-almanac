@@ -15,12 +15,12 @@ Inspirado por la estética “weirdcore” y el humor caótico que domina las re
 ### Página principal
 Una galería visual de *brainrots* con nombres y miniaturas únicas, cada una con un botón **“View more”** para explorar su historia, origen y personalidad.
 
-![Brainrots Gallery](https://the-brainrots-almanac.com/brainrots)
+## https://the-brainrots-almanac.com/brainrots
 
 ### API pública
 El proyecto incluye una API REST que expone los datos de los *brainrots* para su uso libre o educativo.
 
-![API Docs](https://the-brainrots-almanac.com/docs-api)
+## https://the-brainrots-almanac.com/docs-api
 
 ---
 
@@ -59,6 +59,5 @@ https://mpago.li/2zZrF69
 ```bash
 GET https://the-brainrots-almanac.com/api/brainrots
 
-```params
 GET https://the-brainrots-almanac.com/api/brainrots?name=67&key=112
 
