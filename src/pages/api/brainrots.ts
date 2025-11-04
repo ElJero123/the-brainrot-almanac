@@ -1,7 +1,8 @@
 import { createClient } from "@supabase/supabase-js"
 import type { APIRoute } from "astro"
+import { SUPABASE_PUBLIC_URL, SERVICE_ROLE_KEY } from "astro:env/server"
 
-const { SUPABASE_PUBLIC_URL, SERVICE_ROLE_KEY } = import.meta.env
+
 const sql = createClient(SUPABASE_PUBLIC_URL, SERVICE_ROLE_KEY)
 
 export const GET: APIRoute = async ({ request }) => {
