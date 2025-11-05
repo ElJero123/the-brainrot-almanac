@@ -2,6 +2,8 @@
 import { ClientRouter } from 'astro:transitions'
 import '../styles/global.css'
 import { getHeaders } from '../functions/getHeaders'
+import HeadersMetaSeoEs from '../components/SEO/headersMetaSeoEs.astro'
+import HeadersMetaSeo from '../components/SEO/headersMetaSeo.astro'
 
 const { title }	= Astro.props
 
@@ -16,6 +18,9 @@ const isSpainLanguage = await getHeaders({ request: Astro.request })
 		<link rel="icon" type="image/svg+xml" href="/logo.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<ClientRouter />
+
+		{isSpainLanguage ? <HeadersMetaSeoEs /> : <HeadersMetaSeo />}
+
 		<title>{title}</title>
 	</head>
 	<body>
