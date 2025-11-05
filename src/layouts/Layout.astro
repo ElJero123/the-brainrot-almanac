@@ -1,6 +1,7 @@
 ---
 import { ClientRouter } from 'astro:transitions'
 import '../styles/global.css'
+import Analytics from '@vercel/analytics/astro'
 import { getHeaders } from '../functions/getHeaders'
 import HeadersMetaSeoEs from '../components/SEO/headersMetaSeoEs.astro'
 import HeadersMetaSeo from '../components/SEO/headersMetaSeo.astro'
@@ -25,5 +26,6 @@ const isSpainLanguage = await getHeaders({ request: Astro.request })
 	</head>
 	<body>
 		<slot />
+		<Analytics />
 	</body>
 </html>
