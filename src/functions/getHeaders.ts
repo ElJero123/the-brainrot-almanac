@@ -3,7 +3,7 @@ export async function getHeaders({ request }: { request : Request }) {
     'sv', 'es', 'gt', 'hn', 'mx', 'ni', 'pa', 'py', 'pe', 'pr', 'uy', 've', 'gq']
 
     const headerIPUbication = request.headers.get('x-vercel-ip-country')?.toUpperCase()
-    const isUbication = spanishCountries.filter(country => country === headerIPUbication)
+    const isUbication = spanishCountries.filter(country => country.toUpperCase() === headerIPUbication)
 
-    return isUbication[0] !== headerIPUbication
+    return isUbication.includes(headerIPUbication!)
 }
