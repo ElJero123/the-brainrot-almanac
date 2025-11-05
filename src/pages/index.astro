@@ -2,6 +2,7 @@
 import AboutAndMission from '../components/landing/english/AboutAndMission.astro'
 import Footer from '../components/landing/english/Footer.astro'
 import Hero from '../components/landing/english/Hero.astro'
+import ShowingLandingAds from '../components/landing/ShowingLandingAds.astro'
 import AboutAndMissionEs from '../components/landing/spanish/AboutAndMissionEs.astro'
 import FooterEs from '../components/landing/spanish/FooterEs.astro'
 import HeroEs from '../components/landing/spanish/HeroEs.astro'
@@ -18,10 +19,12 @@ const isSpainLanguage = await getHeaders({ request: Astro.request })
 		{!isSpainLanguage ?
 			<Hero />
 			<AboutAndMission />
+			<ShowingLandingAds />
 			<Footer />
 		:
 			<HeroEs />
 			<AboutAndMissionEs />
+			<ShowingLandingAds />
 			<FooterEs />	
 		}
 	</div>

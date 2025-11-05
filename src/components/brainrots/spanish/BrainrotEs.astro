@@ -1,5 +1,6 @@
 ---
 import type { Brainrot } from "../../../types"
+import ContentAd from "../../ads/Content-ad.astro"
 
 const { brainrot } = Astro.props
 const dataBrainrot: Brainrot = brainrot
@@ -40,6 +41,9 @@ const brainrotConditionals = dataBrainrot.slug === 'pipi-avocado'
             <div>
                 <h2 class="text-2xl font-semibold mt-2 text-[var(--secondary)]">En batalla</h2>
                 <p>{data.inBattle?.spanish}</p>
+            </div>
+            <div class="flex w-full flex-col jusitfy-center items-center">
+                <ContentAd />
             </div>
         </article>
     </div>
