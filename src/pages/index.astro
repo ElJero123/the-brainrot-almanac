@@ -19,12 +19,12 @@ const isSpainLanguage = await getHeaders({ request: Astro.request })
 		{!isSpainLanguage ?
 			<Hero />
 			<AboutAndMission />
-			<ShowingLandingAds />
+			<ShowingLandingAds client:load />
 			<Footer />
 		:
 			<HeroEs />
 			<AboutAndMissionEs />
-			<ShowingLandingAds />
+			<ShowingLandingAds client:load />
 			<FooterEs />	
 		}
 	</div>
