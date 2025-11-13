@@ -1,50 +1,72 @@
 ---
-import type { Brainrot } from "../../../types"
-import ContentAd from "../../ads/Content-ad.astro"
+import type { Brainrot } from "../../../types";
+import ContentAd from "../../ads/Content-ad";
 
-const { brainrot } = Astro.props
-const dataBrainrot: Brainrot = brainrot
+const { brainrot } = Astro.props;
+const dataBrainrot: Brainrot = brainrot;
 
-const { data } = dataBrainrot
+const { data } = dataBrainrot;
 
-const brainrotConditionals = dataBrainrot.slug === 'pipi-avocado'
+const brainrotConditionals = dataBrainrot.slug === "pipi-avocado";
 ---
 
 <section class="prose prose-invert max-w-none mt-5 flex-1">
-    <div class="max-w-9/10 flex flex-col items-center mx-auto">
-        <article class="px-3 flex gap-5 flex-col md:flex-row items-center md:items-start w-full">
-            <img src={data.video} alt={`${data.name} gif`} class=`animate-zoom-in ${brainrotConditionals && 'max-h-150 object-cover'} rounded-lg shadow-lg w-1/2 md:max-h-150 md:w-120` />
-            <div class="border-b-1 border-[var(--secondary)] pb-4 md:border-0 md:pb-0">
-                <h1 class="text-3xl font-bold text-[var(--secondary)]">{data.name}</h1>
-                <h2 class="text-2xl font-semibold mt-2 text-[var(--secondary)]">Historia</h2>
-                <p>{data.history?.spanish}</p>
-            </div>
-        </article>
-        <article class="flex gap-5 flex-col mt-4 px-3 justify-center w-full">
-            <div class="border-b-1 border-[var(--secondary)] pb-4">
-                <h2 class="text-2xl font-semibold mt-2 text-[var(--secondary)]">Letra</h2>
+  <div class="max-w-9/10 flex flex-col items-center mx-auto">
+    <article
+      class="px-3 flex gap-5 flex-col md:flex-row items-center md:items-start w-full"
+    >
+      <img
+        src={data.video}
+        alt={`${data.name} gif`}
+        class=`animate-zoom-in ${brainrotConditionals && 'max-h-150 object-cover'} rounded-lg shadow-lg w-1/2 md:max-h-150 md:w-120`
+      />
+      <div
+        class="border-b-1 border-[var(--secondary)] pb-4 md:border-0 md:pb-0"
+      >
+        <h1 class="text-3xl font-bold text-[var(--secondary)]">{data.name}</h1>
+        <h2 class="text-2xl font-semibold mt-2 text-[var(--secondary)]">
+          Historia
+        </h2>
+        <p>{data.history?.spanish}</p>
+      </div>
+    </article>
+    <article class="flex gap-5 flex-col mt-4 px-3 justify-center w-full">
+      <div class="border-b-1 border-[var(--secondary)] pb-4">
+        <h2 class="text-2xl font-semibold mt-2 text-[var(--secondary)]">
+          Letra
+        </h2>
 
-                <h3 class="text-xl font-semibold mt-2 text-[var(--secondary)]">Versión italiana</h3>
-                <p>{data.lyrics?.italian}</p>
+        <h3 class="text-xl font-semibold mt-2 text-[var(--secondary)]">
+          Versión italiana
+        </h3>
+        <p>{data.lyrics?.italian}</p>
 
-                <h3 class="text-xl font-semibold mt-2 text-[var(--secondary)]">Versión en Español</h3>
-                <p>{data.lyrics?.spanish}</p>
-            </div>
-            <div class="border-b-1 border-[var(--secondary)] pb-4">
-                <h2 class="text-2xl font-semibold mt-2 text-[var(--secondary)]">Descripción o personalidad</h2>
-                <p>{data.personality?.spanish}</p>
-            </div>
-            <div class="border-b-1 border-[var(--secondary)] pb-4">
-                <h2 class="text-2xl font-semibold mt-2 text-[var(--secondary)]">Recepción</h2>
-                <p>{data.reception?.spanish}</p>
-            </div>
-            <div>
-                <h2 class="text-2xl font-semibold mt-2 text-[var(--secondary)]">En batalla</h2>
-                <p>{data.inBattle?.spanish}</p>
-            </div>
-            <div class="flex w-full flex-col jusitfy-center items-center">
-                <ContentAd client:load/>
-            </div>
-        </article>
-    </div>
+        <h3 class="text-xl font-semibold mt-2 text-[var(--secondary)]">
+          Versión en Español
+        </h3>
+        <p>{data.lyrics?.spanish}</p>
+      </div>
+      <div class="border-b-1 border-[var(--secondary)] pb-4">
+        <h2 class="text-2xl font-semibold mt-2 text-[var(--secondary)]">
+          Descripción o personalidad
+        </h2>
+        <p>{data.personality?.spanish}</p>
+      </div>
+      <div class="border-b-1 border-[var(--secondary)] pb-4">
+        <h2 class="text-2xl font-semibold mt-2 text-[var(--secondary)]">
+          Recepción
+        </h2>
+        <p>{data.reception?.spanish}</p>
+      </div>
+      <div>
+        <h2 class="text-2xl font-semibold mt-2 text-[var(--secondary)]">
+          En batalla
+        </h2>
+        <p>{data.inBattle?.spanish}</p>
+      </div>
+      <div class="flex w-full flex-col jusitfy-center items-center">
+        <ContentAd client:load />
+      </div>
+    </article>
+  </div>
 </section>

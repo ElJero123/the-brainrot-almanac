@@ -1,0 +1,13 @@
+export default function LandingAd1 () {
+    return (
+        <iframe
+            src="/landing-ad-1.html"
+            style={{
+                width: "300px",
+                height: "250px", // o el tamaño del anuncio
+                border: "none",
+                overflow: "hidden"
+            }}
+        />  
+    )
+}

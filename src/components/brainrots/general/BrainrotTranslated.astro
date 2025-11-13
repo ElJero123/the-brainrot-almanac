@@ -10,4 +10,4 @@ const { brainrot } = Astro.props
 const isSpainLanguage = await getHeaders({ request: Astro.request })
 ---
 
-{!isSpainLanguage ? <Brainrot brainrot={brainrot} client:load /> : <BrainrotEs brainrot={brainrot} client:load/>}
+{!isSpainLanguage ? <Brainrot brainrot={brainrot} /> : <BrainrotEs brainrot={brainrot} />}
